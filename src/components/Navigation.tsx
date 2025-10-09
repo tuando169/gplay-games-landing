@@ -5,10 +5,10 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Games", href: "#games" },
-    { label: "Careers", href: "#careers" },
-    { label: "Support", href: "#support" },
-    { label: "About Us", href: "#about" },
+    { label: "Games", href: "/games" },
+    { label: "Careers", href: "/careers" },
+    { label: "Support", href: "/support" },
+    { label: "About Us", href: "/about" },
   ];
 
   return (
