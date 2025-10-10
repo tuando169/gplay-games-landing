@@ -1,7 +1,13 @@
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,8 +20,8 @@ const Navigation = () => {
     { label: t('nav.about'), href: "/about" },
   ];
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'vi' : 'en');
+  const handleLanguageChange = (value: 'en' | 'vi') => {
+    setLanguage(value);
   };
 
   return (
@@ -37,28 +43,36 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <Button
-              onClick={toggleLanguage}
-              variant="ghost"
-              size="sm"
-              className="text-background/80 hover:text-background hover:bg-background/10 gap-2"
-            >
-              <Globe size={18} />
-              {language === 'en' ? 'VI' : 'EN'}
-            </Button>
+            <Select value={language} onValueChange={handleLanguageChange}>
+              <SelectTrigger className="w-[140px] bg-background/10 border-background/20 text-background hover:bg-background/20">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent className="bg-background border-border z-[100]">
+                <SelectItem value="vi" className="cursor-pointer">
+                  🇻🇳 Tiếng Việt
+                </SelectItem>
+                <SelectItem value="en" className="cursor-pointer">
+                  🇬🇧 English
+                </SelectItem>
+              </SelectContent>
+            </Select>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-2">
-            <Button
-              onClick={toggleLanguage}
-              variant="ghost"
-              size="sm"
-              className="text-background/80 hover:text-background hover:bg-background/10 gap-1"
-            >
-              <Globe size={16} />
-              {language === 'en' ? 'VI' : 'EN'}
-            </Button>
+            <Select value={language} onValueChange={handleLanguageChange}>
+              <SelectTrigger className="w-[120px] bg-background/10 border-background/20 text-background hover:bg-background/20 text-sm h-9">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent className="bg-background border-border z-[100]">
+                <SelectItem value="vi" className="cursor-pointer text-sm">
+                  🇻🇳 Việt
+                </SelectItem>
+                <SelectItem value="en" className="cursor-pointer text-sm">
+                  🇬🇧 EN
+                </SelectItem>
+              </SelectContent>
+            </Select>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-background p-2 hover:bg-background/10 rounded-lg transition-colors"
