@@ -3,6 +3,20 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Target, Heart, Zap, Globe, Users, Trophy, Rocket, Star } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import office1 from "@/assets/office-1.jpg";
+import office2 from "@/assets/office-2.jpg";
+import office3 from "@/assets/office-3.jpg";
+import office4 from "@/assets/office-4.jpg";
+import office5 from "@/assets/office-5.jpg";
+import office6 from "@/assets/office-6.jpg";
 
 const values = [
   {
@@ -68,6 +82,17 @@ const stats = [
 ];
 
 const About = () => {
+  const { t } = useLanguage();
+
+  const officeImages = [
+    { src: office1, alt: t('about.gallery.alt1') },
+    { src: office2, alt: t('about.gallery.alt2') },
+    { src: office3, alt: t('about.gallery.alt3') },
+    { src: office4, alt: t('about.gallery.alt4') },
+    { src: office5, alt: t('about.gallery.alt5') },
+    { src: office6, alt: t('about.gallery.alt6') },
+  ];
+
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -76,11 +101,10 @@ const About = () => {
         <section className="container px-4 sm:px-6 lg:px-8 mb-24">
           <div className="text-center space-y-6 animate-fade-up max-w-4xl mx-auto">
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight">
-              About GPlay
+              {t('about.title')}
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We're a passionate team of game developers, artists, and dreamers dedicated to creating 
-              legendary gaming experiences that bring people together from around the world.
+              {t('about.description')}
             </p>
           </div>
         </section>
@@ -182,17 +206,53 @@ const About = () => {
           </div>
         </section>
 
+        <section className="container px-4 sm:px-6 lg:px-8 mb-24">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-black mb-8 text-center">{t('about.gallery.title')}</h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              {t('about.gallery.description')}
+            </p>
+            
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent>
+                {officeImages.map((image, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="p-2">
+                      <Card className="border-2 hover:border-primary/50 transition-all overflow-hidden group">
+                        <CardContent className="p-0">
+                          <img
+                            src={image.src}
+                            alt={image.alt}
+                            className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                          />
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
+          </div>
+        </section>
+
         <section className="container px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 rounded-3xl p-12 text-center space-y-6 max-w-4xl mx-auto">
-            <h2 className="text-4xl font-black">Join Our Story</h2>
+            <h2 className="text-4xl font-black">{t('about.join.title')}</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We're always looking for talented, passionate people to join our team. 
-              Be part of creating the next generation of legendary games.
+              {t('about.join.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <a href="/careers">
                 <button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-4 rounded-full shadow-[0_0_30px_rgba(59,130,246,0.5)] hover:shadow-[0_0_50px_rgba(59,130,246,0.7)] transition-all">
-                  View Open Positions
+                  {t('about.join.button')}
                 </button>
               </a>
             </div>
