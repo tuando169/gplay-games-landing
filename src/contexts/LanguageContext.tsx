@@ -54,6 +54,16 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.players': 'Người Chơi',
     'hero.countries': 'Quốc Gia',
     
+    // Home Gallery
+    'home.gallery.title': 'Văn Phòng Của Chúng Tôi',
+    'home.gallery.description': 'Khám phá không gian làm việc sáng tạo nơi những game huyền thoại được sinh ra',
+    'home.gallery.alt1': 'Studio phát triển game hiện đại',
+    'home.gallery.alt2': 'Đội ngũ sáng tạo đang làm việc',
+    'home.gallery.alt3': 'Không gian làm việc với RGB',
+    'home.gallery.alt4': 'Khu vực nghỉ ngơi',
+    'home.gallery.alt5': 'Nhà phát triển làm việc',
+    'home.gallery.alt6': 'Khu vực giải trí',
+    
     // Featured Games
     'featured.title': 'Trò Chơi Nổi Bật',
     'featured.subtitle': 'Khám phá những tựa game tuyệt vời được hàng triệu người chơi yêu thích',
@@ -90,6 +100,14 @@ const translations: Record<Language, Record<string, string>> = {
     'careers.form.portfolio': 'Portfolio/LinkedIn',
     'careers.form.message': 'Lời Nhắn',
     'careers.form.submit': 'Gửi Đơn Ứng Tuyển',
+    'careers.gallery.title': 'Môi Trường Làm Việc',
+    'careers.gallery.description': 'Nơi những ý tưởng sáng tạo trở thành hiện thực',
+    'careers.gallery.alt1': 'Studio phát triển game',
+    'careers.gallery.alt2': 'Đội ngũ cộng tác',
+    'careers.gallery.alt3': 'Không gian sáng tạo',
+    'careers.gallery.alt4': 'Khu vực thảo luận',
+    'careers.gallery.alt5': 'Phát triển game',
+    'careers.gallery.alt6': 'Không gian giải trí',
     
     // Support Page
     'support.title': 'Trung Tâm Hỗ Trợ',
@@ -149,6 +167,16 @@ const translations: Record<Language, Record<string, string>> = {
     'hero.players': 'Players',
     'hero.countries': 'Countries',
     
+    // Home Gallery
+    'home.gallery.title': 'Our Office',
+    'home.gallery.description': 'Explore the creative workspace where legendary games are born',
+    'home.gallery.alt1': 'Modern game development studio',
+    'home.gallery.alt2': 'Creative team at work',
+    'home.gallery.alt3': 'Workspace with RGB lighting',
+    'home.gallery.alt4': 'Relaxation area',
+    'home.gallery.alt5': 'Developers working',
+    'home.gallery.alt6': 'Recreation area',
+    
     // Featured Games
     'featured.title': 'Featured Games',
     'featured.subtitle': 'Discover amazing games loved by millions of players worldwide',
@@ -185,6 +213,14 @@ const translations: Record<Language, Record<string, string>> = {
     'careers.form.portfolio': 'Portfolio/LinkedIn',
     'careers.form.message': 'Message',
     'careers.form.submit': 'Submit Application',
+    'careers.gallery.title': 'Work Environment',
+    'careers.gallery.description': 'Where creative ideas become reality',
+    'careers.gallery.alt1': 'Game development studio',
+    'careers.gallery.alt2': 'Team collaboration',
+    'careers.gallery.alt3': 'Creative workspace',
+    'careers.gallery.alt4': 'Discussion area',
+    'careers.gallery.alt5': 'Game development',
+    'careers.gallery.alt6': 'Recreation space',
     
     // Support Page
     'support.title': 'Support Center',
